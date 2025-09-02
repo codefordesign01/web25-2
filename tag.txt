@@ -1,0 +1,71 @@
+<html></html>
+<meta>
+<body></body>
+<head></head>
+<title></title>
+<p></p>  
+<h1></h1>
+<h2></h2>
+<h3></h3>
+<h4></h4>
+<h5></h5>
+<h6></h6>
+<b></b>
+<marquee scrollamount="" direction=""></marquee>
+<u></u>
+<i></i>
+<s></s>
+<q></q>
+<a href=""></a>
+<del></del>
+<center></center>
+<button></button>
+<form></form>
+<lable for=""></lable>
+<textarea></textarea>
+<input type="" name="" id="" placholder="" required />
+<hr> slef closing
+<br>
+<iframe></iframe>
+<img src="" width="" height="" alt="">
+<ol></ol>
+<ul></ul>
+<li></li>
+<link href="">
+<style></style>
+<script src=""></scritp>
+<strong></strong> bold text
+<small></small>
+<select></select>
+<option></option>
+<span></span>
+<sup></sup>
+<sub></sub>
+<table></table>
+<thead></thead>
+<tbody></tbody>
+<tr></tr>
+<th></th>
+<td></td>
+<video></video>
+<audio></audio>
+<source>
+<fieldset></fieldset>
+<legend></legend>
+<div></div>
+<nav></nav>
+<header></header>
+<footer></footer>
+<section></section>
+<article></acticle>
+
+
+
+
+
+
+
+
+
+
+
