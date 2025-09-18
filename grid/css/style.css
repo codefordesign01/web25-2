@@ -1,0 +1,43 @@
+body{
+	margin: 0;
+}
+.main{
+	padding: 50px 80px;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 30px 0px;
+}
+.card{
+	border:1px solid gray;
+	width: 30%;
+}
+.card h3{
+	margin-top: 0px;
+	color: blue;
+}
+.card div{
+	padding: 20px;
+}
+.card button{
+	width: 100%;
+	padding: 10px 30px;
+	background: blue;
+	color: white;
+	border:none;
+	border-radius: 5px;
+}
+/*about*/
+.about{
+	padding: 0px 80px;
+}
+.about_main{
+	display: flex;
+	gap: 30px;
+}
+.about_left{
+	width: 50%;
+}
+.about_right{
+	width: 50%;
+}
