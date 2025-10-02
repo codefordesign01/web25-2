@@ -1,0 +1,226 @@
+body{
+	font-family: "Roboto", sans-serif;
+	margin:0px;
+}
+/*tobar css */
+.topbar{
+	background: #103b70;
+	display: flex;
+	padding: 5px 100px;
+}
+.topbar .left{
+	width: 50%;
+}
+.topbar .left ul{
+	padding: 0;
+	margin: 0;
+	display: flex;
+	list-style: none;
+	gap: 10px;
+}
+.topbar .left ul li a{
+	color: white;
+}
+.topbar .right{
+	width: 50%;
+	text-align: right;
+	display: flex;
+	gap: 20px;
+	justify-content: flex-end;
+}
+.topbar .right a{
+	color: white;
+	text-decoration: none;
+}
+/*navbar css*/
+.navbar{
+	background: #fff;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0px 100px;
+}
+.logo{
+	text-decoration: none;
+}
+.logo h1{
+	color: #103b70;
+}
+.logo h1 span{
+	color: #f8cc93;
+}
+.navbar ul{
+	margin:0;
+	padding: 0;
+	display: flex;
+	list-style: none;
+	gap: 10px;
+}
+.navbar ul li a{
+	text-decoration: none;
+	color: black;
+	padding: 10px 20px;
+	border-radius: 5px;
+}
+.navbar ul li a:hover{
+	background: #103b70;
+	color: white;
+}
+.nav_btn{
+	background: #103b70;
+	color: white !important;
+}
+/*banner section css*/
+.banner{
+	background-image: url(../media/banner.jpg);
+	
+	background-size: cover;
+}
+.banner .left{
+	width: 50%;
+}
+.banner .left h1{
+	color: white;
+}
+.banner .left p{
+	color: white;
+}
+.banner .left button{
+	background: #103b70;
+	color: white;
+	border:none;
+	padding: 10px 30px;
+	border-radius: 5px;
+	text-transform: uppercase;
+}
+.banner .left button:hover{
+	background-color: #f8cc93;
+	color: black;
+}
+.linear{
+	background: rgba(0, 0, 0, 0.3);
+	padding: 150px 100px;
+}
+/*card section css*/
+.cards_section{
+	display: flex;
+	padding: 0px 100px;
+	margin-top: -100px;
+	gap: 30px;
+}
+.card{
+	
+	/*height: 300px;*/
+	width: 33%;
+	background-color: white;
+	border-radius: 10px;
+	border-bottom:3px solid #103b70;
+	padding: 20px 30px;
+	box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.card_icon_box{
+	width: 80px;
+	height: 80px;
+	background: lightgray;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.card_icon_box i{
+	font-size: 40px;
+	color: #103b70;
+}
+.card p{
+	margin-bottom: 0;
+}
+
+/*about section css*/
+.about{
+	/*border:2px solid red;*/
+	padding: 50px 100px;
+}
+.about_heading{
+	text-align: center;
+}
+.about_heading p{
+	color: #f8cc93;
+	font-weight: 700;
+	font-size: 20px;
+}
+.about_heading h2{
+	font-weight: 900;
+	font-size: 40px;
+	margin-top: 0px;
+	margin-bottom: 10px;
+}
+.line{
+	width: 150px;
+	height: 3px;
+	background: #103b70;
+	margin: auto;
+}
+.about_data{
+	display: flex;
+	margin-top: 50px;
+	gap: 30px;
+}
+.about .left{
+	width: 50%;
+	/*border:2px solid;
+	height: 400px;*/
+}
+.about .right{
+	width: 50%;
+	/*height: 400px;
+	border:2px solid;*/
+}
+.about_data_list{
+	display: flex;
+}
+
+.whyChose{
+	/*border:2px solid red;*/
+	display: flex;
+	gap: 30px;
+	margin-top: 50px;
+}
+.whyChose .left{
+	width: 50%;
+	/*height: 500px;
+	border:2px solid;*/
+}
+.whyChose .right{
+	width: 50%;
+	/*height: 500px;
+	border:2px solid;*/
+}
+.whyChose .left .whyChose_text{
+	font-weight: 700;
+	font-size: 18px;
+	color: #f8cc93;
+}
+.whyChose .left h3{
+	font-size: 32px;
+}
+.whychose_card{
+	/*height: 150px;*/
+	margin-bottom: 20px;
+	padding: 15px;
+	display: flex;
+	gap: 12px;
+	border-radius: 10px;
+	box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.whychose_card p{
+	margin-bottom: 0;
+}
+.whychose_card i{
+	font-size: 22px;
+	color:#103b70 ;
+}
+.whychose_card_title{
+	margin-top:0;
+	font-size: 20px;
+	font-weight: 700;
+}
