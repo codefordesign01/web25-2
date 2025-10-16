@@ -1,0 +1,239 @@
+body{
+	margin: 0px;
+	font-family: "Roboto", sans-serif;
+}
+:root{
+	--themeGreen:#1eb2a6;
+	--themeBlack:#323232;
+	--themeGray:#f8f8f8;
+}
+a{
+	text-decoration: none;
+}
+header{
+	padding: 0px 100px;
+	background-image: url(../media/bg_1.jpg);
+	background-size: cover;
+	background-attachment: fixed;
+}
+/*topbar css*/
+.topbar{
+	padding: 20px 0px;
+	display: flex;
+}
+.tobar_left{
+	width: 30%;
+}
+.tobar_right{
+	width: 70%;
+	display: flex;
+	justify-content: space-between;
+}
+.logo span{
+	color: white;
+	font-size: 40px;
+	font-weight: 700;
+	text-transform: uppercase;
+	line-height: 0.8;
+}
+.logo p{
+	color: white;
+	margin: 0;
+}
+.logo:hover .logo_heading{
+	color: var(--themeGreen);
+}
+.date{
+	display: flex;
+	gap: 10px;
+}
+.date i{
+	color: white;
+	font-size: 35px;
+}
+.date span{
+	color: white;
+}
+.date p{
+	color: white;
+	font-weight: 600;
+	margin: 0;
+}
+.topbar_list{
+	display: flex;
+	list-style: none;
+	gap: 10px;
+	margin: 0;
+	padding: 0;
+}
+.topbar_list li a{
+	width: 40px ;
+	height: 40px;
+	background-color: rgba(255, 255, 255, 0.4);
+	display: inline-block;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: var(--themeGreen);
+	transition: 0.25s;
+}
+.topbar_list li a:hover{
+	background-color: var(--themeGreen);
+	color: white;
+}
+/*navbar css*/
+.navbar{
+	background-color: rgba(255, 255, 255, 0.2);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.navbar ul{
+	display: flex;
+	list-style: none;
+	margin: 0;
+	gap: 30px;
+}
+.navbar ul li a{
+	color: white;
+	transition: 0.25s;
+}
+.navbar ul li a:hover{
+	color: var(--themeGreen);
+}
+.navbar button{
+	height: 60px;
+	background-color: var(--themeGreen);
+	color: white;
+	border:none;
+	padding: 0px 30px;
+}
+.banner{
+	padding: 150px 0px;
+}
+.banner div{
+	width: 50%;
+}
+.banner span{
+	color: rgba(255, 255, 255, 0.8);
+	font-weight: 600;
+	letter-spacing: 2px;
+	font-size: 18px;
+}
+.banner h1{
+	font-size: 45px;
+	color: white;
+}
+.banner p{
+	color: white;
+}
+.banner button{
+	padding: 15px 30px;
+	border:none;
+	font-size: 18px;
+	font-weight: 700;
+}
+.btn_1{
+	background-color: var(--themeGreen);
+	color: white;
+}
+.btn_2{
+	background-color: white;
+	color: var(--themeGreen);
+}
+/*Benefits css*/
+.Benefits{
+	padding: 0px 100px;
+	background-color: var(--themeGray);
+	display: flex;
+	gap: 30px;
+}
+.Benefits_left{
+	width: 50%;
+}
+.Benefits_left img{
+	width: 100%;
+}
+.Benefits_right{
+	width: 50%;
+	padding: 100px 0px;
+}
+.Benefits_right span{
+	font-weight: 600;
+	color: var(--themeGreen);
+	text-transform: uppercase;
+	font-size: 18px;
+}
+.Benefits_right h2{
+	font-size: 50px;
+	margin-top: 10px;
+}
+.Benefits_card{
+	background-color: white;
+	margin-bottom: 10px;
+	padding: 20px;
+	box-sizing: border-box;
+	display: flex;
+	gap: 10px;
+	transition: 0.35s;
+	box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+.Benefits_card:hover{
+	background-color: var(--themeGreen);
+}
+.Benefits_card:hover .changeColor{
+	color: white;
+}
+.Benefits_card i{
+	color: var(--themeGreen);
+	font-size: 50px;
+	transition: 0.35s;
+}
+.Benefits_card span{
+	font-size: 20px;
+}
+.Benefits_card p{
+	line-height: 1.5;
+	margin-bottom: 0;
+}
+/*status css*/
+.status{
+	background-image: url(../media/bg_3.jpg);
+	padding: 100px 100px;
+	background-size: cover;
+	background-position: center;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: 1fr;
+	position: relative;
+	z-index: 1;
+}
+.status::before{
+	content: "";
+	background-color: black;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0.3;
+	z-index: -1;
+}
+.status_card{
+	display: flex;
+	gap: 10px;
+}
+.status_card i{
+	font-size: 60px;
+	color: white;
+}
+.status_card span{
+	font-size: 40px;
+	font-weight: 700;
+	color: white;
+}
+.status_card p{
+	color: white;
+	margin: 0;
+}

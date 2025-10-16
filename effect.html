@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style>
+		.banner{
+			background-image: url(images/car.jpg);
+			padding: 150px 0px;
+			background-size: cover	;
+			text-align: center;
+			position: relative;
+			z-index: 1;
+			color: white;
+		}
+		.banner::before{
+			content: "";
+			background: black;
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%	;
+			z-index: -1;
+			opacity: 0.2;
+		}
+
+
+		input:focus{
+			background: blue;
+			color: white;
+
+		}
+		span{
+		position: relative;		
+		}
+		span::after{
+			content: "";
+			background: blue;
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			width: 0%;
+			height: 3px;
+			transition: 0.35s;
+			z-index: -1;
+		}
+		span:hover::after{
+			width: 100%;
+			left: 0;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="banner">
+		<h1>Lorem ipsum dolor sit amet.</h1>
+		<h3>Lorem, ipsum, dolor.</h3>
+	</div>
+	<br>
+	<input type="text" name=""><br>
+	<span>
+		Lorem ipsum, dolor.
+	</span>
+	
+
+</body>
+</html>
