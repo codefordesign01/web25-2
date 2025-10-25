@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style>
+		.box{
+			border:2px solid;
+			height: 500px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-image: linear-gradient(45deg,red , yellow ,green);
+		}
+		.inner{
+			width: 150px;
+			height: 150px;
+			background: blue;
+			margin:5px;
+		}
+		.box2{
+			transition: 0.35s;
+			clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+		}
+		.box2:hover{
+			background: green;
+			transform:translateY(-50px) ;
+
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="inner"></div>
+		<div class="inner box2"></div>
+		<div class="inner"></div>
+	</div>
+
+</body>
+</html>
