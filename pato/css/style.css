@@ -1,0 +1,81 @@
+body{
+	font-family: "Montserrat", sans-serif;
+}
+.poppins{
+	font-family: "Poppins", sans-serif;
+}
+.Courgette{
+	font-family: "Courgette", cursive;
+}
+header{
+
+}
+/*navbar*/
+.navbar{
+	position: fixed !important;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	width: 100%;
+	padding: 20px 0 !important;
+	border-top: 5px solid red;
+	background-color: rgba(255, 255, 255, 0.1);
+	backdrop-filter: blur(10px);
+}
+.navbar .nav-link{
+	color: white;
+	transition: 0.25s;
+}
+.carousel-indicators [data-bs-target]{
+	height: 20px !important;
+	width: 20px !important;
+	border-radius: 50%;
+}
+.carousel_button{
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #303841;
+	padding: 10px;
+}
+.carousel_button:hover{
+	background-color: red;
+}
+.navbar .nav-link:hover{
+	color: red;
+}
+/*banner*/
+.slider_01 {
+	background-image: url("../media/master-slides-01.jpg");
+	background-size: cover;
+}
+.slider_02 {
+	background-image: url("../media/master-slides-02.jpg");
+	background-size: cover;
+}
+.slider_03 {
+	background-image: url("../media/slide1-01.jpg");
+	background-size: cover;
+}
+.banner_padding span{
+	font-size: 50px;
+	color: white;
+	font-weight: 800;
+}
+.banner_padding h1{
+	font-size: 80px;
+	color: white;
+}
+.banner_padding button{
+	padding: 10px 30px;
+	border:none;
+	border-radius: 10px;
+	color: red;
+	margin-top: 50px;
+}
+.banner_padding{
+	padding: 200px 0px;
+}
