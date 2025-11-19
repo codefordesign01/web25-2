@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css"/>
+	<!-- Add the slick-theme.css if you want default styling -->
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css"/>
+</head>
+<body>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="slider center" >
+					<div>
+						<h3>1</h3>
+					</div>
+					<div>
+						<h3>2</h3>
+					</div>
+					<div>
+						<h3>3</h3>
+					</div>
+					<div>
+						<h3>4</h3>
+					</div>
+					<div>
+						<h3>5</h3>
+					</div>
+					<div>
+						<h3>6</h3>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container py-5">
+		<div class="row justify-content-center">
+			<div class="col-lg-6 col-md-10 col-sm-12">
+				<form class="bg-white shadow rounded p-4">
+					<div class="row">
+						<div class="col-lg-6 col-md-6 col-sm-12">
+							<div>
+								<label for="name" class="form-label">Enter Name</label>
+								<input id="name" type="text" class="form-control " />
+								<div class="valid-feedback">
+									is valid
+								</div>
+								<div class="invalid-feedback">
+									is in valid
+								</div>
+							</div>		
+						</div>
+						<div class="col-lg-6 col-md-6 col-sm-12">
+							<div>
+								<label for="name" class="form-label">Enter Name</label>
+								<input readonly id="name" type="text" class="form-control" />
+							</div>		
+						</div>
+						<div class="col-12 mt-3">
+							<label class="form-label">Message</label>
+							<textarea class="form-control"></textarea>
+						</div>
+						<div class="col-12 mt-3">
+							<label class="form-label">file</label>
+							<input type="file" class="form-control" name="">
+						</div>
+						<div class="col-12 mt-3">
+							<label class="form-label">file</label>
+							<input type="color" class="form-control form-control-color" name="">
+						</div>
+						<div class="col-12 mt-3">
+							<label class="form-label">Select</label>
+							<select class="form-select" multiple size="3">
+								<option>book 1</option>
+								<option>book 2</option>
+								<option>book 3</option>
+								<option>book 4</option>
+								<option>book 5</option>
+							</select>
+						</div>
+						<div class="col-12 mt-3">
+							<div class="form-check form-switch">
+								<label class="form-check-label" for="check">Book 1</label>
+								<input class="form-check-input" id="check" type="checkbox" name="">
+							</div>
+						</div>
+						<div class="col-12 mt-3">
+							<label>range</label>
+							<input class="form-range" type="range" name="">
+						</div>
+						<div class="col-12 mt-3">
+							<div class="input-group">
+
+								<input type="text" class="form-control" name="">
+								<span class="input-group-text">$</span>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>
+	<script>
+		$(".slider").slick({
+
+  // normal options...
+  infinite: false,
+
+  // the magic
+  responsive: [{
+
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        infinite: true
+      }
+
+    }, {
+
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        dots: true
+      }
+
+    }, {
+
+      breakpoint: 300,
+      settings: "unslick" // destroys slick
+
+    }]
+});
+	</script>
+
+</body>
+</html>
