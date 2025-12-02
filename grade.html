@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<style>
+		.resultBox{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="container py-5">
+		<div id="form">
+			<div class="row justify-content-center">
+				<div class="col-lg-5 col-md-8 col-sm-12">
+					<div class="card shadow border-primary">
+						<div class="card-body">
+							<div class="mb-3">
+								<input type="number" placeholder="Enter Obtain Marks" class="form-control" name="" id="Obtain">
+							</div>
+							<div class="mb-3">
+								<input type="number" placeholder="Enter Total Marks" class="form-control" name="" id="total">
+							</div>
+							<div class="text-center">
+								<button onclick="handelCheck()" class="btn btn-primary">
+									Check Result
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="resultBox" id="box">
+			<div class="row justify-content-center mt-5">
+				<div class="col-lg-5 col-md-8 col-sm-12">
+					<div class="card shadow border-primary">
+						<div class="card-body">
+							<h2 class="text-primary text-center">Your Result</h2>
+							<h3>
+								Grade: <span id="grade" class="text-primary"></span>
+							</h3>
+							<h3>
+								Percentage: <span id="per" class="text-primary"></span>
+							</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="text-center mt-3">
+				<a href="" class="btn btn-primary">check agian</a>
+			</div>
+		</div>
+	</div>
+
+
+	<script>
+		function handelCheck(){
+			// hide and show main boxes
+			document.querySelector("#box").setAttribute("class" , "")
+			document.querySelector("#form").setAttribute("class" , "resultBox")
+
+
+			// get value from input
+			var total = document.querySelector("#total").value;
+			var obtain = document.querySelector("#Obtain").value;
+
+			// convert value string to number
+			var	totalNumber = parseInt(total);
+			var	obtainNumber = parseInt(obtain);
+
+
+			// check empty input filed
+			if(total === ""  || obtain ===  "" ){
+				alert("Enter Value");
+			}
+			else{
+				// check obtain marks above of total
+				if(obtainNumber > totalNumber){
+					alert("invalid value")
+				}
+				else{
+
+					// make and store percentage and grade variable
+					var p = (obtainNumber*100)/totalNumber;
+					var g = "";
+
+					if(p >=90 && p < 100){
+						g= "A+";
+					}else if(p >= 80 && p < 90){
+						g="A"
+					}else if(p >= 70 && p < 80){
+						g="B"
+					}else if(p >= 60 && p < 70){
+						g="C"
+					}else if(p >= 50 && p < 60){
+						g="D"
+					}else if(p >= 33 && p < 50){
+						g="E"
+					}else{
+						g="F"
+					}
+				}
+			}
+			
+			// send value to span tag in html
+			document.querySelector("#grade").innerText = g ;
+				document.querySelector("#per").innerText = p.toFixed(2) + "%" ;
+		}
+
+		
+
+	</script>
+
+</body>
+</html>
