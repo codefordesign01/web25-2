@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style>
+		.blue{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<h1 class="text-center size ">Lorem, ipsum dolor sit amet.</h1>
+	<button onclick="demo()">click here</button>
+	<button onclick="remove()">click remove</button>
+
+
+	<script>
+		function demo(){
+			document.querySelector("h1").classList.add("blue")
+		}
+		function remove(){
+			document.querySelector("h1").classList.toggle("blue")
+		}
+	</script>
+
+</body>
+</html>
