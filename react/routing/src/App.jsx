@@ -12,6 +12,7 @@ import Header from './components/Header'
 import Landing from './pages/Landing'
 import Sidebar from './components/Sidebar'
 import Admin from './pages/Admin'
+import Detail from './components/Detail'
 
 const App = () => {
   return (
@@ -32,6 +33,7 @@ const App = () => {
               <Route path='man' element={<Man />} />
             </Route>
             <Route  path="/contact" element={<Contact />} />
+            <Route  path="/detail/:id" element={<Detail/>} />
         </Route>
       </Routes>
 
