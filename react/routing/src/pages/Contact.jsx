@@ -1,52 +1,68 @@
 import React, { useState } from 'react'
 
 const Contact = () => {
-  const [name , setName] = useState("HEllo");
-  const [email , setEmail] = useState();
-  const [language , setLanguage] = useState([]);
-  const [image ,setImage] = useState("https://img.freepik.com/premium-vector/vector-flat-illustration-grayscale-avatar-user-profile-person-icon-gender-neutral-silhouette-profile-picture-suitable-social-media-profiles-icons-screensavers-as-templatex9xa_719432-2210.jpg?semt=ais_hybrid&w=740&q=80")
 
-  function handelCheck(e){
-    console.log(e.target.value , e.target.checked)
+  const [name , setName] = useState("----------");
+  const [phone , setPhone] = useState();
+  const [image , setImage] = useState();
+  const [language , setLanguage] = useState([]);
+
+
+  function handleCheck(e){
     if(e.target.checked){
-      setLanguage([...language,e.target.value])
+      setLanguage([...language , e.target.value])
     }
     else{
-      setLanguage([language.filter((item)=>{item!==e.target.value})])
+      setLanguage(language.filter((item)=>item!=e.target.value))
     }
+    
   }
+   function handelClear(){
+    setName("")
+    setLanguage([])
+      setImage("")
+    
+   }
 
   return (
     <div>
       <div className='container py-5'>
-        <div className='row justify-content-center'>
+        <div className='row'>
           <div className='col-lg-6 col-md-10 col-sm-12'>
-            <div className='bg-white shadow rouded p-5 border border-primary'>
-              <input onChange={(e)=>{setName(e.target.value)}} placeholder='Enter Name' className='form-control' />
-              <input onChange={(e)=>{setImage(e.target.value)}} placeholder='Enter Iamge' className='form-control' />
-              <input type='email' placeholder='Enter Email' onChange={(e)=>{setEmail(e.target.value)}} />
-              <div className='mt-3'>
-                <h4>Select Any Language</h4>
-                <input onChange={handelCheck} value="HTML" id='html' type='checkbox' />
-                <label htmlFor='html'>HTML</label>
-                <br />
-                <input onChange={handelCheck} value="CSS" id='css' type='checkbox' />
-                <label htmlFor='css'>CSS</label>
-                <br />
-                <input onChange={handelCheck} value="JS" id='js' type='checkbox' />
-                <label htmlFor='js'>JS</label>
-                <br />
-                <input onChange={handelCheck} value="BS" id='bs' type='checkbox' />
-                <label htmlFor='bs'>Bootstrap</label>
-              </div>
+            <div className='bg-white shadow rounded p-4 border border-info'>
+                <div className='mb-3'>
+                  <input onChange={(e)=>{setName(e.target.value)}} type='text' placeholder='Enter Name' className='form-control' />
+                </div>
+                <div className='mb-3'>
+                  <input onChange={(e)=>{setPhone(e.target.value)}} type='number' placeholder='Enter Number' className='form-control'  />
+                </div>
+                <div>
+                  <input onChange={(e)=>{setImage(e.target.value)}} type='url' placeholder='Enter Image url' className='form-control'  />
+                </div>
+                <div>
+                  <h3>Select Any Language</h3>
+
+                  <label htmlFor='html'>HTML</label>
+                  <input onChange={handleCheck} value="HTML" id='html' type='checkbox' /><br />
+                  <label htmlFor='css'>Css</label>
+                  <input onChange={handleCheck} value="CSS" id='css' type='checkbox' /><br />
+                  <label  htmlFor='js'>Js</label>
+                  <input onChange={handleCheck} value="JS" id='js' type='checkbox' /><br />
+                  <label  htmlFor='react'>React</label>
+                  <input onChange={handleCheck} value="React" id='react' type='checkbox' /><br />
+                </div>
+                <button onClick={handelClear} className='btn btn-info'>Clear All Data</button>
             </div>
-            
           </div>
-          <div className='col-6'>
-            <img src={image} width="100%" />
-            <h1>{name}</h1>
-            <h1>{email}</h1>
-            <h1>{language}</h1>
+          <div className='col-lg-6 col-md-10 col-sm-12'>
+            <div className='bg-white shadow rounded p-4 border border-info'>
+                <div className='mb-3'>
+                  <img src={image} />
+                  <h2>Name : {name}</h2>
+                  <h2>Phone : {phone}</h2>
+                  <h2>Language : {language}</h2>
+                </div>
+            </div>
           </div>
         </div>
       </div>
