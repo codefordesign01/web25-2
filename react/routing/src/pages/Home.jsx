@@ -1,40 +1,23 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { addItem } from '../redux/slice';
 
 const Home = () => {
+  const dispatch = useDispatch()
 
-  var users = [
-    {
-      id:1,
-      name:"Ali",
-      email:"Ali@gmail.com",
-      age:20
-    },
-    {
-      id:2,
-      name:"Ahmad",
-      email:"ahmad@gmail.com",
-      age:25
-    },
-    {
-      id:3,
-      name:"Zain",
-      email:"zain@gmail.com",
-      age:18
-    },
-    {
-      id:4,
-      name:"zeshan",
-      email:"zeshan@gmail.com",
-      age:20
-    },
-    {
-      id:5,
-      name:"Umer",
-      email:"umer@gmail.com",
-      age:20
-    }
-  ]
+  const [product , setProduct] = useState([])
+
+  useEffect(()=>{
+    getProduts();
+  } , [])
+
+   const getProduts = async () =>{
+    const api = "https://dummyjson.com/products";
+    const res = await fetch(api);
+    const data = await res.json();
+    setProduct(data.products)
+  }
 
 
   return (
@@ -42,14 +25,18 @@ const Home = () => {
       <div className='container py-5'>
         <div className='row'>
           {
-            users.map((u , i)=>(
+            product.map((p , i)=>(
               <div key={i} className='col-lg-4 col-md-6 col-sm-12 mb-3'>
                 <div className='card shadow'>
                   <div className='card-body'>
-                      <h2>{u.name}</h2>
-                      <p>{u.email}</p>
-                      <p>Ager :<span className='text-info'>{u.age}</span></p>
-                      <Link to={"/detail/" + u.id} className='btn btn-info'>Read More</Link>
+                    <img src={p.thumbnail} width="250px" />
+                      <h2>{p.title}</h2>
+                      <p>{p.price}</p>
+                      <p>Ager :<span className='text-info'>{p.rating}</span></p>
+                      <div className='d-flex justify-content-between'>
+                        <Link to={"/detail/" + p.id} className='btn btn-info'>Read More</Link>
+                      <button onClick={()=>dispatch(addItem(1))} className='btn btn-success'>Add to card</button>
+                      </div>
                   </div>
                 </div>
               </div>

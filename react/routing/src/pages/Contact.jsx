@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const Contact = () => {
 
@@ -6,6 +6,12 @@ const Contact = () => {
   const [phone , setPhone] = useState();
   const [image , setImage] = useState();
   const [language , setLanguage] = useState([]);
+  const [gendel , setGendel] = useState("Female");
+  const [book , setBook] = useState("Book_4");
+
+  useEffect(()=>{
+    democlick();
+  } , []);
 
 
   function handleCheck(e){
@@ -23,6 +29,10 @@ const Contact = () => {
       setImage("")
     
    }
+   function democlick(){
+    console.log("demo call")
+   }
+   
 
   return (
     <div>
@@ -51,6 +61,25 @@ const Contact = () => {
                   <label  htmlFor='react'>React</label>
                   <input onChange={handleCheck} value="React" id='react' type='checkbox' /><br />
                 </div>
+                <div>
+                  <h3>Select Gendel</h3>
+                  <label htmlFor="male" >Male</label>
+                  <input onChange={(e)=>{setGendel(e.target.value)}} checked={gendel === "Male"}  type="radio" name="gendel" value="Male" id="male" />
+                  <label htmlFor="female" >Female</label>
+                  <input onChange={(e)=>{setGendel(e.target.value)}} checked={gendel === "Female"} type="radio" name="gendel" value="Female" id="female" />
+                </div>
+
+                <div>
+                  <h3>
+                    select Book
+                  </h3>
+                  <select className='form-select' onChange={(e)=>{setBook(e.target.value)}} defaultValue={book}>
+                    <option value="Book_1">Book 1</option>
+                    <option value="Book_2">Book 2</option>
+                    <option value="Book_3">Book 3</option>
+                    <option value="Book_4">Book 4</option>
+                  </select>
+                </div>
                 <button onClick={handelClear} className='btn btn-info'>Clear All Data</button>
             </div>
           </div>
@@ -58,10 +87,13 @@ const Contact = () => {
             <div className='bg-white shadow rounded p-4 border border-info'>
                 <div className='mb-3'>
                   <img src={image} />
-                  <h2>Name : {name}</h2>
+                  <h2 className='red'>Name : {name}</h2>
                   <h2>Phone : {phone}</h2>
                   <h2>Language : {language}</h2>
+                  <h2>Gendel : {gendel}</h2>
+                  <h2>Book : {book}</h2>
                 </div>
+                <button >click here</button>
             </div>
           </div>
         </div>

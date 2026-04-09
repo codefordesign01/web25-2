@@ -13,6 +13,7 @@ import Landing from './pages/Landing'
 import Sidebar from './components/Sidebar'
 import Admin from './pages/Admin'
 import Detail from './components/Detail'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
   return (
