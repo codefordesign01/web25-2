@@ -1,6 +1,24 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 const Home = () => {
+
+  const [fProduct , setFProduct] = useState([])
+
+  useEffect(()=>{
+    GetFProduct();
+  } , [])
+
+
+  async function GetFProduct(){
+    const api = "http://localhost:3000/products";
+    let res = await fetch(api);
+
+    const data= await res.json();
+    console.log(data);
+    setFProduct(data.slice(-4))
+
+  }
+
   return (
      <div className="bg-gray-50">
 
@@ -68,45 +86,19 @@ const Home = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
 
-          {/* Product 1 */}
-          <div className="bg-gray-50 rounded-xl shadow p-4 hover:shadow-lg">
-            <img
-              src="https://images.unsplash.com/photo-1585386959984-a41552231658"
-              className="h-40 w-full object-cover rounded-lg"
-            />
-            <h3 className="mt-3 font-semibold">Stylish Jacket</h3>
-            <p className="text-blue-600 font-bold">$49</p>
-          </div>
-
-          {/* Product 2 */}
-          <div className="bg-gray-50 rounded-xl shadow p-4 hover:shadow-lg">
-            <img
-              src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519"
-              className="h-40 w-full object-cover rounded-lg"
-            />
-            <h3 className="mt-3 font-semibold">Sneakers</h3>
-            <p className="text-blue-600 font-bold">$70</p>
-          </div>
-
-          {/* Product 3 */}
-          <div className="bg-gray-50 rounded-xl shadow p-4 hover:shadow-lg">
-            <img
-              src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a"
-              className="h-40 w-full object-cover rounded-lg"
-            />
-            <h3 className="mt-3 font-semibold">Handbag</h3>
-            <p className="text-blue-600 font-bold">$60</p>
-          </div>
-
-          {/* Product 4 */}
-          <div className="bg-gray-50 rounded-xl shadow p-4 hover:shadow-lg">
-            <img
-              src="https://images.unsplash.com/photo-1526178613658-3f1622045557"
-              className="h-40 w-full object-cover rounded-lg"
-            />
-            <h3 className="mt-3 font-semibold">Watch</h3>
-            <p className="text-blue-600 font-bold">$90</p>
-          </div>
+          {
+            fProduct.map((p)=>(
+              <div className="bg-gray-50 rounded-xl shadow p-4 hover:shadow-lg">
+              <img
+                src={p.image}
+                className="h-40 w-full object-cover rounded-lg"
+              />
+              <h3 className="mt-3 font-semibold">{p.title}</h3>
+              <p className="text-blue-600 font-bold">${p.price}</p>
+            </div>
+            ))
+          }
+          
 
         </div>
       </section>

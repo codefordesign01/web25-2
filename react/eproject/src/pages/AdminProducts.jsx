@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState , useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 const AdminProducts = () => {
  const [product , setProduct] = useState([])
@@ -15,12 +16,27 @@ const AdminProducts = () => {
      setProduct(data);
      console.log(data)
    }
+
+   async function DeleteProduct (id){
+    const api = "http://localhost:3000/products/";
+    let res = await fetch(api+id , {
+      method:"DELETE"
+    });
+    const data = res.json();
+
+    if(data){
+      console.log("Product Delete Success")
+    }
+    else{
+      alert("Delete Error");
+    }
+   }
   return (
     
     <div className="px-6 md:px-20 py-12">
       <div className='flex justify-between items-center mb-5'>
        <h2 className="text-2xl font-bold mb-6">Products List</h2>
-       <button className='bg-blue-500 text-white px-4 py-2 rounded-sm'>Add New Product</button>
+       <Link to="/addproduct" className='bg-blue-500 text-white px-4 py-2 rounded-sm'>Add New Product</Link>
       </div>
       <div className="overflow-x-auto">
         <table className="min-w-full bg-white shadow rounded-lg overflow-hidden">
@@ -52,7 +68,7 @@ const AdminProducts = () => {
                 <td className="py-3 px-6 font-bold text-blue-600">${p.price}</td>
                 <td className="py-3 px-6 font-bold text-blue-600">
                  <button className='p-2 border-0 text-blue-400'>Eidt</button>
-                 <button className='p-2 border-0 text-red-400'>Delete</button>
+                 <Link onClick={()=>{DeleteProduct(p.id)}} className='p-2 border-0 text-red-400'>Delete</Link>
                  <button className='p-2 border-0 text-green-400'>View</button>
                 </td>
               </tr>

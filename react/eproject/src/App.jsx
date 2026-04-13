@@ -9,6 +9,7 @@ import AdminLayout from "./components/AdminLayout"
 import Admin from "./pages/Admin"
 import Footer from "./components/Footer"
 import AdminProducts from "./pages/AdminProducts"
+import AddProduct from "./pages/AddProduct"
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <Route element={<AdminLayout />}>
           <Route path="/admin" element={<Admin />} />
           <Route path="/adminproduct" element={<AdminProducts />} />
+          <Route path="/addproduct" element={<AddProduct />} />
         </Route>
         
       </Routes>
